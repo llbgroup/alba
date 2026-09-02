@@ -10,7 +10,18 @@ self.addEventListener('install', (event) => {
     (async () => {
       const cache = await caches.open(CACHE)
       await Promise.all(
-        ['', 'index.html', 'manifest.json', 'favicon.svg', 'icon-192.png', 'icon-512.png'].map((path) =>
+        [
+          '',
+          'index.html',
+          'manifest.json',
+          'favicon.svg',
+          'icon-192.png',
+          'icon-512.png',
+          'sky.jpg',
+          'dusk.jpg',
+          'storm.jpg',
+          'night.jpg',
+        ].map((path) =>
           cache.add(fromScope(path)).catch(() => {}),
         ),
       )
