@@ -48,10 +48,17 @@ export default function TaskItem({
       <div>
         <div style={{ display: 'flex', gap: 10 }}>
           {typeof index === 'number' && <span className="task-index">{index}</span>}
-          <input
+          <textarea
             className="title-input"
+            rows={1}
             value={task.title}
             onChange={(e) => updateTask(task.id, { title: e.target.value })}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault()
+                e.currentTarget.blur()
+              }
+            }}
             aria-label="Aufgabe"
           />
         </div>

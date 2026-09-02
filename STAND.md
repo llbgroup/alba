@@ -120,10 +120,10 @@ vite.config.js              Journal + Rewrite-Proxy (grok-4.6)
 - Beispieldaten: einmal, nur wenn der Stand leer ist. Sonst Einstellungen → Beispieldaten laden.
 - PWA: Manifest, PNG-Icons, Service Worker, Apple-Touch-Icon. Chrome: Chip unten rechts (`beforeinstallprompt`). Safari: Dock / Home-Bildschirm.
 - Anleitung: `ANLEITUNG.md` (Mensch), `AGENTS.md` (AI richtet ein, kann die PWA nicht still installieren). Sync-Vertrag: `docs/SYNC.md`.
-- GitHub-Push aktualisiert niemanden automatisch. `npm run update` auf jeder Maschine. Gehostete HTTPS-URL wäre die Voraussetzung für stilles App-Update.
+- Live: GitHub Pages. Push auf main deployt. Installierte App aktualisiert sich beim nächsten Öffnen.
 - `src/views/Plan.jsx`, `Goals.jsx`, `Later.jsx`, `Week.jsx` sind Altlast, nicht in der Nav.
 - Ideen-AI braucht einen xAI-Schlüssel (Einstellungen oder `XAI_API_KEY` / `.env.local`). Vite nach Plugin-Änderung neu starten, Port 4765.
 
 ## Git
 
-Privates Repo: `llbgroup/alba`. Persönliche `journal/*.md` sind gitignored, README/INDEX nicht. Daten im Browser, nicht im Git. `updatedAt` / `createdAt` am Stand für späteren Sync.
+Repo: `llbgroup/alba` (öffentlich). Live: `https://llbgroup.github.io/alba/` via GitHub Pages (`ALBA_BASE=/alba/`). Push auf `main` deployt. PWA lädt den neuen Stand beim nächsten Öffnen. Lokal bleibt Port 4765, anderer Ursprung, anderer Speicher. Journal-Markdown nur am Dev-Server.

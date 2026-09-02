@@ -2,21 +2,22 @@
 
 Du richtest Alba auf der Maschine des Menschen ein. Du installierst nicht still die Chrome-PWA — das ist ein Klick, den nur der Mensch tun kann.
 
-Repo (privat): `https://github.com/llbgroup/alba`
-App: `http://127.0.0.1:4765/`
-Port **4765** und Host **127.0.0.1** sind fest (`vite.config.js`, `strictPort`). Anderer Ursprung = leeres `localStorage`.
+Repo: `https://github.com/llbgroup/alba`
+App: `https://llbgroup.github.io/alba/`
+Lokal: `http://127.0.0.1:4765/` — Port und Host fest. Anderer Ursprung = leeres `localStorage`.
 
-## Auftrag: einrichten
+## Auftrag: einrichten (für einen Menschen)
 
-1. `gh auth status`. Ohne Leserecht auf `llbgroup/alba` bricht ab und sagst, der Mensch muss dich einladen oder `gh auth login` mit `repo`.
-2. Fehlt der Ordner: `gh repo clone llbgroup/alba` (oder `git clone https://github.com/llbgroup/alba.git`) in den Arbeitsordner, den der Mensch für lokale Tools nutzt.
-3. `cd alba && npm install`
-4. Läuft schon etwas auf 4765? Nicht den Port wechseln — den Prozess identifizieren, nicht einen zweiten Server auf 4766 starten.
-5. `npm run dev`
-6. Browser: `http://127.0.0.1:4765/`
-7. **PWA:** Chrome/Edge feuern `beforeinstallprompt`. Die App zeigt unten rechts „Als App“. Sag: dort Installieren, oder das Symbol in der Adresszeile. Safari: Ablage → Zum Dock. Du kannst `beforeinstallprompt` nicht ohne User-Geste abschließen. Nicht mit Puppeteer, nicht mit Chrome-Flags, nicht mit `chrome://` herumschlagen.
-8. Leere App bekommt ein paar Attrappen (Funktionen, kein Leben). Wer schon Daten hat, bleibt unangetastet. `fillDemo(true)` nur nach Frage. Name/Thema unter Einstellungen.
-9. **Weitergeben:** Collaborator einladen, dann klonen. Der Link allein reicht nicht — privates Repo, lokale PWA.
+1. Browser: `https://llbgroup.github.io/alba/`
+2. **PWA:** Chrome unten rechts „Als App“. Safari: Ablage → Zum Dock. Du kannst den Install-Dialog nicht klicken.
+3. Nicht klonen, außer der Mensch will entwickeln.
+
+## Auftrag: lokal entwickeln
+
+1. `git clone https://github.com/llbgroup/alba.git`
+2. `npm install` und `npm run dev`
+3. `http://127.0.0.1:4765/` — nicht den Port wechseln.
+4. Leere App bekommt ein paar Attrappen. Wer schon Daten hat, bleibt. `fillDemo(true)` nur nach Frage.
 
 ## Auftrag: aktualisieren
 
@@ -26,7 +27,7 @@ git pull --ff-only
 npm install
 ```
 
-Dev-Server neu starten, Seite neu laden. GitHub-Push aktualisiert niemanden automatisch. Jede Maschine zieht selbst. Die installierte PWA zeigt weiterhin localhost, nicht GitHub.
+Nur für die lokale Kopie. Die Website `https://llbgroup.github.io/alba/` aktualisiert sich beim nächsten Öffnen von selbst (Push auf `main` → Pages).
 
 ```bash
 npm run update

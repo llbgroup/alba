@@ -1,12 +1,19 @@
-const CACHE = 'alba-v1'
+const SCOPE = self.registration.scope
+const CACHE = 'alba-' + SCOPE
 
-const PRECACHE = ['/', '/index.html', '/manifest.json', '/favicon.svg', '/icon-192.png', '/icon-512.png']
+function fromScope(path) {
+  return new URL(path, SCOPE).href
+}
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE)
-      await Promise.all(PRECACHE.map((url) => cache.add(url).catch(() => {})))
+      await Promise.all(
+        ['', 'index.html', 'manifest.json', 'favicon.svg', 'icon-192.png', 'icon-512.png'].map((path) =>
+          cache.add(fromScope(path)).catch(() => {}),
+        ),
+      )
       await self.skipWaiting()
     })(),
   )
@@ -25,8 +32,8 @@ self.addEventListener('activate', (event) => {
 function passThrough(url) {
   if (url.origin !== self.location.origin) return true
   const { pathname, searchParams } = url
-  if (pathname.startsWith('/api/')) return true
-  if (pathname.startsWith('/@') || pathname.startsWith('/src/') || pathname.startsWith('/node_modules/')) return true
+  if (pathname.includes('/api/')) return true
+  if (pathname.includes('/@') || pathname.includes('/src/') || pathname.includes('/node_modules/')) return true
   if (pathname.includes('.vite') || searchParams.has('t') || searchParams.has('import')) return true
   return false
 }
@@ -40,7 +47,7 @@ async function networkFirst(request) {
   } catch {
     const cached = await cache.match(request)
     if (cached) return cached
-    return cache.match('/index.html')
+    return cache.match(fromScope('index.html'))
   }
 }
 
@@ -76,7 +83,7 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  if (url.pathname.startsWith('/assets/')) {
+  if (url.pathname.includes('/assets/')) {
     event.respondWith(cacheFirst(request))
     return
   }

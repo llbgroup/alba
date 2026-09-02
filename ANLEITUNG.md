@@ -4,15 +4,13 @@ Persönliches Betriebssystem für den Tag. Kein Konto, keine Wolke. Alles bleibt
 
 ## Einrichten
 
-Der GitHub-Link allein installiert nichts. So gibst du Alba weiter:
+Adresse: [https://llbgroup.github.io/alba/](https://llbgroup.github.io/alba/)
 
-1. Im privaten Repo die Person als Collaborator einladen (GitHub → Settings → Collaborators).
-2. Sie klont das Repo — oder gibt den Link ihrer AI, die `AGENTS.md` liest.
-3. `npm install` und `npm run dev`.
-4. Öffnen: `http://127.0.0.1:4765/` — **diesen Port nicht ändern.** Ein anderer Port ist ein leeres Konto.
-5. Chrome: unten rechts **Als App**. Safari: Ablage → Zum Dock.
+1. Link öffnen.
+2. Chrome: unten rechts **Als App**. Safari: Ablage → Zum Dock.
+3. Fertig. Ihre Daten bleiben in ihrem Browser.
 
-Ohne Einladung sieht sie das Repo nicht. Ohne Dev-Server auf ihrem Rechner gibt es keine PWA. Ihre Daten liegen nur bei ihr.
+Zum Entwickeln lokal: `npm install` und `npm run dev` auf `http://127.0.0.1:4765/` — **diesen Port nicht ändern.** Das ist ein anderes Konto als die Website.
 
 Safari (Mac): Ablage → Zum Dock hinzufügen. iPhone: Teilen → Zum Home-Bildschirm (nicht über `127.0.0.1` vom Telefon).
 
@@ -42,15 +40,9 @@ Beim ersten leeren Start liegen ein paar Attrappen (ein Highlight, drei To-dos, 
 
 ## Aktualisieren
 
-Ein Push auf GitHub ändert **nicht** die installierte App. Es gibt kein Update-Popup und keine Neu-Installation. Jede Maschine holt den Code selbst:
+Die Website aktualisiert sich selbst. Ein Push auf `main` geht live. Beim nächsten Öffnen der App (oder des Tabs) kommt der neue Stand — ohne neu zu installieren, ohne Popup.
 
-```bash
-npm run update
-```
-
-Dev-Server neu, Seite einmal neu laden. Das Dock-Symbol bleibt. Die PWA zeigt weiterhin `http://127.0.0.1:4765/` — denselben lokalen Server, nicht GitHub.
-
-Damit alle still denselben Stand hätten, müsste Alba unter einer HTTPS-Adresse liegen. Das ist noch nicht so.
+Wer lokal mit `npm run dev` arbeitet, zieht weiter selbst: `npm run update`.
 
 ## Mehrere Geräte
 

@@ -40,7 +40,23 @@ function AimRow({ aim, size = 'month' }) {
         value={aim.title}
         onChange={(e) => updateAim(aim.id, { title: e.target.value })}
       />
-      <TrashBtn onClick={() => dropAim(aim.id)} />
+      <div className="aim-row-tools">
+        <button
+          type="button"
+          className={'aim-tag' + (tagOpen ? ' open' : '')}
+          onClick={() => setTagOpen((v) => !v)}
+        >
+          {area ? (
+            <span className={'pip ' + area.tone}>
+              <i />
+              {area.name}
+            </span>
+          ) : (
+            <span className="quiet">Tag</span>
+          )}
+        </button>
+        <TrashBtn onClick={() => dropAim(aim.id)} />
+      </div>
       <textarea
         className="aim-note"
         rows={2}
@@ -48,20 +64,6 @@ function AimRow({ aim, size = 'month' }) {
         value={aim.note || ''}
         onChange={(e) => updateAim(aim.id, { note: e.target.value })}
       />
-      <button
-        type="button"
-        className={'aim-tag' + (tagOpen ? ' open' : '')}
-        onClick={() => setTagOpen((v) => !v)}
-      >
-        {area ? (
-          <span className={'pip ' + area.tone}>
-            <i />
-            {area.name}
-          </span>
-        ) : (
-          <span className="quiet">Tag</span>
-        )}
-      </button>
       {tagOpen && (
         <TagBar
           embedded

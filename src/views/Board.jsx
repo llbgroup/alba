@@ -102,10 +102,17 @@ function TodoRow({ task }) {
       <div className="todo-main">
         <Check on={task.status === 'done'} onToggle={() => toggleTask(task.id)} label={task.title} />
         <div className="todo-body">
-          <input
+          <textarea
             className="title-input"
+            rows={1}
             value={task.title}
             onChange={(e) => updateTask(task.id, { title: e.target.value })}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault()
+                e.currentTarget.blur()
+              }
+            }}
             aria-label="To-do"
           />
           <div className="compact-meta">

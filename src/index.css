@@ -1775,8 +1775,7 @@ button { cursor: pointer; }
 }
 .aim-row .cal-menu,
 .aim-row .tag-filter,
-.aim-note,
-.aim-tag { grid-column: 1 / -1; }
+.aim-note { grid-column: 1 / -1; }
 .aim-row .tag-filter.embedded {
   opacity: 1;
   max-height: none;
@@ -1796,22 +1795,41 @@ button { cursor: pointer; }
   line-height: 1.4;
   color: var(--ink-2);
   field-sizing: content;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease), max-height 0.2s var(--ease);
+}
+.aim-row:hover .aim-note,
+.aim-row:focus-within .aim-note {
+  opacity: 1;
+  max-height: 8em;
+  pointer-events: auto;
 }
 .aim-note::placeholder { color: var(--ink-3); }
 .aim-tag {
-  justify-self: start;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.08);
   border-radius: 999px;
-  padding: 5px 10px;
+  padding: 4px 8px;
   color: inherit;
   width: auto;
+  max-width: 140px;
+  overflow: hidden;
+}
+.aim-tag .pip {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .aim-tag.open { border-color: var(--terra); }
 .aim-row-tools {
   display: flex;
   align-items: center;
   gap: 2px;
+  padding-top: 4px;
 }
 .aim-line {
   width: 100%;
@@ -2098,7 +2116,11 @@ button { cursor: pointer; }
   font-weight: 550;
   letter-spacing: -0.02em;
   min-width: 0;
-  text-overflow: ellipsis;
+  resize: none;
+  field-sizing: content;
+  white-space: pre-wrap;
+  overflow: hidden;
+  line-height: 1.35;
 }
 
 .task-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 2px; }

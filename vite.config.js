@@ -148,6 +148,7 @@ function albaRewrite() {
 }
 
 export default defineConfig({
+  base: process.env.ALBA_BASE || '/',
   plugins: [react(), albaJournal(), albaRewrite()],
   server: {
     host: '127.0.0.1',
