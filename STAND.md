@@ -77,11 +77,11 @@ Abend-Close schreibt denselben Tag ins Journal (`source: 'evening'`, Update stat
 ## Wichtige Dateien
 
 ```
-src/App.jsx                 Routing, Sky an Shell, Install-Chip. Kein Onboarding, kein Auto-Demo.
+src/App.jsx                 Routing, Sky an Shell, Install-Chip. Leere App: ein paar Attrappen, einmal.
 AGENTS.md                   Auftrag für eine AI, die den GitHub-Link bekommt
 ANLEITUNG.md                Für Menschen, speicherbar unter Einstellungen
 src/store.js                State, localStorage, logDays(), plannedGroups()
-src/seed.js                 Generische Beispieldaten (Funktionen, keine Firmen). Nur über Einstellungen.
+src/seed.js                 Wenige Attrappen: 3 To-dos, 1 Idee, 2 Ziele, 1 Routine. Keine Firmen.
 public/sw.js                Service Worker (Netz zuerst für HTML, Vite-Dev unangetastet)
 public/manifest.json        PWA, PNG 192/512 + maskable
 src/index.css               Chrome, Board, Hero, Ideen, Log
@@ -117,7 +117,7 @@ vite.config.js              Journal + Rewrite-Proxy (grok-4.6)
 - Tags lassen sich anlegen, aber noch nicht archivieren (außer über Altbestand im Log).
 - Carry-Over-Modal existiert noch, startet aber nicht mehr automatisch.
 - Kein Onboarding. Leere App ist nutzbar. Name/Thema/Routinen unter Einstellungen.
-- Beispieldaten nur manuell (`Einstellungen → Beispieldaten laden`). Generisch, erklärt die Flächen.
+- Beispieldaten: einmal, nur wenn der Stand leer ist. Sonst Einstellungen → Beispieldaten laden.
 - PWA: Manifest, PNG-Icons, Service Worker, Apple-Touch-Icon. Chrome: Chip unten rechts (`beforeinstallprompt`). Safari: Dock / Home-Bildschirm.
 - Anleitung: `ANLEITUNG.md` (Mensch), `AGENTS.md` (AI richtet ein, kann die PWA nicht still installieren). Sync-Vertrag: `docs/SYNC.md`.
 - GitHub-Push aktualisiert niemanden automatisch. `npm run update` auf jeder Maschine. Gehostete HTTPS-URL wäre die Voraussetzung für stilles App-Update.

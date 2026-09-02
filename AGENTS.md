@@ -15,7 +15,8 @@ Port **4765** und Host **127.0.0.1** sind fest (`vite.config.js`, `strictPort`).
 5. `npm run dev`
 6. Browser: `http://127.0.0.1:4765/`
 7. **PWA:** Chrome/Edge feuern `beforeinstallprompt`. Die App zeigt unten rechts „Als App“. Sag: dort Installieren, oder das Symbol in der Adresszeile. Safari: Ablage → Zum Dock. Du kannst `beforeinstallprompt` nicht ohne User-Geste abschließen. Nicht mit Puppeteer, nicht mit Chrome-Flags, nicht mit `chrome://` herumschlagen.
-8. Die App startet leer. Kein Onboarding. Nicht von allein Beispieldaten laden. Name/Thema unter Einstellungen.
+8. Leere App bekommt ein paar Attrappen (Funktionen, kein Leben). Wer schon Daten hat, bleibt unangetastet. `fillDemo(true)` nur nach Frage. Name/Thema unter Einstellungen.
+9. **Weitergeben:** Collaborator einladen, dann klonen. Der Link allein reicht nicht — privates Repo, lokale PWA.
 
 ## Auftrag: aktualisieren
 

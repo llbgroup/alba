@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getCustomSky, useAlba } from './store'
+import { fillDemo, getCustomSky, useAlba } from './store'
 import { skySrc } from './lib/skies'
 import Shell from './components/Shell'
 import Capture from './components/Capture'
@@ -28,6 +28,10 @@ export default function App() {
   const s = useAlba()
   const [view, setView] = useState(parseHash)
   const [captureOpen, setCaptureOpen] = useState(false)
+
+  useEffect(() => {
+    fillDemo(false)
+  }, [])
 
   useEffect(() => {
     document.documentElement.dataset.theme = s.profile.theme || 'dusk'

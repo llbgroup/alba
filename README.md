@@ -4,7 +4,7 @@ Persönliches Betriebssystem für den Tag. To-dos datieren, auf Heute abhaken, Z
 
 Daten bleiben im Browser (`localStorage`). Kein Konto, keine Wolke. Journal-Markdown zusätzlich unter `journal/`. Export unter Einstellungen.
 
-Die App startet leer. Name, Thema und Himmel liegen unter Einstellungen. **Beispieldaten laden** füllt generische Stücke, die die Flächen erklären — kein echtes Leben.
+Beim ersten leeren Start ein paar Attrappen, die die Flächen erklären. Name, Thema und Himmel liegen unter Einstellungen. **Beispieldaten laden** ersetzt den Stand.
 
 **Port 4765 nicht ändern.** Der Ursprung `http://127.0.0.1:4765` hält den Stand. Ein anderer Port ist ein leeres Konto. `git pull` aktualisiert den Code, nicht die Daten im Browser.
 
@@ -21,6 +21,10 @@ npm run dev
 
 Chrome und Edge: Chip **unten rechts**, oder das Install-Symbol in der Adresszeile. Safari (Mac): Ablage → Zum Dock hinzufügen. iPhone: Teilen → Zum Home-Bildschirm.
 
+## Weitergeben
+
+Nicht nur den Link. Person als Collaborator einladen, sie klont (oder ihre AI liest `AGENTS.md`), `npm run dev`, dann den Chip. Jede Installation ist lokal, mit eigenen Daten.
+
 ## Anleitung
 
 - Mensch: **[ANLEITUNG.md](ANLEITUNG.md)** — in der App unter Einstellungen speicherbar.
@@ -29,7 +33,7 @@ Chrome und Edge: Chip **unten rechts**, oder das Install-Symbol in der Adresszei
 
 ## Aktualisieren
 
-GitHub-Push kommt nicht von allein auf die Geräte. Jede Maschine:
+Kein Popup, keine Neu-Installation. GitHub-Push kommt nicht von allein. Jede Maschine:
 
 ```bash
 npm run update

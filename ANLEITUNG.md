@@ -4,12 +4,15 @@ Persönliches Betriebssystem für den Tag. Kein Konto, keine Wolke. Alles bleibt
 
 ## Einrichten
 
-1. Repo klonen (privat: Zugriff auf `llbgroup/alba` braucht es).
-2. Im Ordner: `npm install` und `npm run dev`.
-3. Öffnen: `http://127.0.0.1:4765/` — **diesen Port nicht ändern.** Ein anderer Port ist ein leeres Konto.
-4. In Chrome erscheint unten rechts **Als App**. Ein Klick, eigenes Fenster, ohne Browserleiste.
+Der GitHub-Link allein installiert nichts. So gibst du Alba weiter:
 
-Oder den GitHub-Link einer AI geben. Sie liest `AGENTS.md` und setzt auf. Die PWA-Installation im Browser kann sie nicht klicken — das bleibt ein Tipp.
+1. Im privaten Repo die Person als Collaborator einladen (GitHub → Settings → Collaborators).
+2. Sie klont das Repo — oder gibt den Link ihrer AI, die `AGENTS.md` liest.
+3. `npm install` und `npm run dev`.
+4. Öffnen: `http://127.0.0.1:4765/` — **diesen Port nicht ändern.** Ein anderer Port ist ein leeres Konto.
+5. Chrome: unten rechts **Als App**. Safari: Ablage → Zum Dock.
+
+Ohne Einladung sieht sie das Repo nicht. Ohne Dev-Server auf ihrem Rechner gibt es keine PWA. Ihre Daten liegen nur bei ihr.
 
 Safari (Mac): Ablage → Zum Dock hinzufügen. iPhone: Teilen → Zum Home-Bildschirm (nicht über `127.0.0.1` vom Telefon).
 
@@ -35,20 +38,19 @@ Im Browser (`localStorage`), Ursprung `http://127.0.0.1:4765`. Git enthält den 
 
 Einstellungen → Export JSON nimmt den Stand mit. Import ersetzt. Journal-Markdown liegt zusätzlich unter `journal/` auf der Platte, solange der Dev-Server läuft.
 
-Beispieldaten unter Einstellungen sind Attrappen, die die Flächen erklären. Sie ersetzen To-dos, Ideen, Ziele und Routinen — vorher exportieren.
+Beim ersten leeren Start liegen ein paar Attrappen (ein Highlight, drei To-dos, eine Idee, zwei Ziele, eine Routine). Einstellungen → Beispieldaten laden ersetzt den Stand — vorher exportieren.
 
 ## Aktualisieren
 
-GitHub-Push kommt **nicht** von allein auf dein Gerät. Code holen:
+Ein Push auf GitHub ändert **nicht** die installierte App. Es gibt kein Update-Popup und keine Neu-Installation. Jede Maschine holt den Code selbst:
 
 ```bash
-git pull
-npm install
+npm run update
 ```
 
-Dev-Server neu, Seite neu laden. Die installierte App zeigt denselben lokalen Server — sie zieht nicht still vom GitHub.
+Dev-Server neu, Seite einmal neu laden. Das Dock-Symbol bleibt. Die PWA zeigt weiterhin `http://127.0.0.1:4765/` — denselben lokalen Server, nicht GitHub.
 
-Damit alle denselben Stand ohne Ziehen hätten, müsste Alba unter einer HTTPS-Adresse liegen. Das ist noch nicht so.
+Damit alle still denselben Stand hätten, müsste Alba unter einer HTTPS-Adresse liegen. Das ist noch nicht so.
 
 ## Mehrere Geräte
 

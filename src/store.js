@@ -283,6 +283,14 @@ export function fillDemo(force = false) {
   } catch {
     /* ignore */
   }
+  if (!force) {
+    const used =
+      (state.tasks || []).length +
+      (state.ideas || []).length +
+      (state.aims || []).length +
+      (state.habits || []).length
+    if (used) return false
+  }
   const today = todayISO()
   const built = buildShowcase(uid, today)
   update((s) => ({
@@ -302,7 +310,7 @@ export function fillDemo(force = false) {
   } catch {
     /* ignore */
   }
-  showToast('Beispiel geladen. Erklärt die Flächen — kein echtes Leben.')
+  if (force) showToast('Beispiel geladen. Erklärt die Flächen — kein echtes Leben.')
   return true
 }
 
