@@ -20,6 +20,17 @@ const NAV = [
     ),
   },
   {
+    id: 'habits',
+    label: 'Routinen',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+        <circle cx="8" cy="8" r="3" />
+        <circle cx="16" cy="16" r="3" />
+        <path d="M10.2 10.2 13.8 13.8" />
+      </svg>
+    ),
+  },
+  {
     id: 'aims',
     label: 'Ziele',
     icon: (
@@ -34,17 +45,6 @@ const NAV = [
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
         <path d="M7 4.5h10v15l-5-2.4L7 19.5z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'habits',
-    label: 'Routinen',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
-        <circle cx="8" cy="8" r="3" />
-        <circle cx="16" cy="16" r="3" />
-        <path d="M10.2 10.2 13.8 13.8" />
       </svg>
     ),
   },

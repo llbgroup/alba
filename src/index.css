@@ -184,7 +184,7 @@ button { cursor: pointer; }
   pointer-events: none;
   opacity: 0;
   transform: translateY(-50%) translateX(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
   transition: opacity 0.16s var(--ease), transform 0.16s var(--ease);
 }
 .sidebar .wordmark .nav-label {
@@ -375,13 +375,41 @@ button { cursor: pointer; }
   --accent-grad: linear-gradient(155deg, #e8f6fb 0%, #9fd0e4 48%, #7eb8ce 100%);
   --accent-ink: #14323c;
   color: var(--ink);
-  background: rgba(14, 16, 20, 0.66);
-  backdrop-filter: blur(28px) saturate(1.2);
-  -webkit-backdrop-filter: blur(28px) saturate(1.2);
+  position: relative;
+  isolation: isolate;
+  background: rgba(14, 16, 20, 0.62);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  box-shadow: none;
   padding: 28px 30px 30px;
+}
+.page::before,
+.layout > div:not(.today-body)::before,
+.layout > aside::before,
+.today-hero::before,
+.today-body > div::before,
+.today-body > aside::before,
+.today-close::before,
+.glass-card::before,
+.board-col::before,
+.board-archive::before,
+.ideas-list::before,
+.aims-year::before,
+.aims-now::before,
+.aims-grid-wrap::before,
+.aims-weeks::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: rgba(14, 16, 20, 0.28);
+  backdrop-filter: blur(28px) saturate(1.2);
+  -webkit-backdrop-filter: blur(28px) saturate(1.2);
+}
+.ideas-editor::before {
+  content: none;
 }
 .layout > div, .layout > aside, .today-hero, .today-body > div, .today-body > aside, .today-close {
   padding: 26px 28px 28px;
@@ -1004,8 +1032,8 @@ button { cursor: pointer; }
 }
 .board-add input {
   width: 100%;
-  background: rgba(14, 16, 20, 0.66);
-  backdrop-filter: blur(20px);
+  background: rgba(14, 16, 20, 0.72);
+  backdrop-filter: none;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   padding: 14px 16px;
@@ -1056,11 +1084,11 @@ button { cursor: pointer; }
   height: 28px;
   padding: 0 12px;
   border-radius: 999px;
-  background: rgba(16, 18, 22, 0.62);
-  backdrop-filter: blur(18px) saturate(1.4);
-  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  background: rgba(16, 18, 22, 0.72);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  box-shadow: none;
 }
 .tag-add input {
   width: 4.5em;
@@ -1795,17 +1823,6 @@ button { cursor: pointer; }
   line-height: 1.4;
   color: var(--ink-2);
   field-sizing: content;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  pointer-events: none;
-  transition: opacity 0.2s var(--ease), max-height 0.2s var(--ease);
-}
-.aim-row:hover .aim-note,
-.aim-row:focus-within .aim-note {
-  opacity: 1;
-  max-height: 8em;
-  pointer-events: auto;
 }
 .aim-note::placeholder { color: var(--ink-3); }
 .aim-tag {
@@ -2175,13 +2192,13 @@ button { cursor: pointer; }
   display: inline-flex;
   align-items: center;
   min-height: 28px;
-  background: rgba(16, 18, 22, 0.62);
-  backdrop-filter: blur(18px) saturate(1.4);
-  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  background: rgba(16, 18, 22, 0.72);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border-color: rgba(255, 255, 255, 0.2);
   color: #f6f1e8;
   font-weight: 550;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  box-shadow: none;
 }
 .page .chip.active,
 .layout > div .chip.active,
@@ -2195,7 +2212,7 @@ button { cursor: pointer; }
   background: rgba(243, 238, 230, 0.94);
   color: #161310;
   border-color: rgba(243, 238, 230, 0.94);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+  box-shadow: none;
 }
 [data-theme="paper"] .chip { background: #f3ebdd; }
 

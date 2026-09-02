@@ -13,18 +13,18 @@ npm run dev
 
 Vite ist auf **Port 4765** und `127.0.0.1` festgelegt (`vite.config.js`, `strictPort`). Grund: `localStorage` hängt am Origin. Anderer Port = leere App.
 
-Stack: Vite 8 + React 19, SPA, Hash-Routing (`#/today`, `#/board`, `#/aims`, `#/ideas`, `#/habits`, `#/log`, `#/settings`). `#/plan` / `#/ziele` → Ziele, `#/journal` → Log.
+Stack: Vite 8 + React 19, SPA, Hash-Routing (`#/today`, `#/board`, `#/habits`, `#/aims`, `#/ideas`, `#/log`, `#/settings`). `#/plan` / `#/ziele` → Ziele, `#/journal` → Log.
 
 ## Wofür die App da ist
 
 | Fläche | Rolle |
 |---|---|
-| **To-do** | Planen. Nur To-dos: **Neu** und **Geplant** als Timeline (Heute, Morgen, Diese Woche, Nächste Woche, später). Hash `#/board` oder `#/todo`. |
 | **Heute** | Arbeiten. Flache Checkliste. Erledigtes bleibt durchgestrichen unten. Routinen ebenfalls durchgestrichen, wenn gehalten. Fokus-Timer, abends erzählen. |
-| **Ziele** | Jahr zuerst (mehr als 3, Rest hinter Fade). Dann Jahr im Blick, Monatsziele, Wochenraster (ein Satz/Woche). Tag und Kurztext immer sichtbar. |
+| **To-do** | Planen. Nur To-dos: **Neu** und **Geplant** als Timeline (Heute, Morgen, Diese Woche, Nächste Woche, später). Hash `#/board` oder `#/todo`. |
+| **Routinen** | Design: Anker Pflicht, max. 5. Abhaken nur auf Heute. Hash `#/habits`. |
+| **Ziele** | Jahr zuerst (mehr als 3, Rest hinter Fade). Dann Jahr im Blick, Monatsziele, Wochenraster (ein Satz/Woche). |
 | **Ideen** | Dokument. Formatzeile als klebende Glasbox oben in der Spalte (H2, To-do, AI, Mikro, Tag, Löschen). Diktat live. AI korrigiert/formuliert. To-dos sitzen im Text und im To-do-Tab. |
 | **Log** | Speicher als Tagesliste. Jeder Tag ein Blatt: Heute zählt, Abend, erledigte To-dos, Routinen, Angelegtes. Hash `#/log/YYYY-MM-DD`. |
-| **Routinen** | Design: Anker Pflicht, max. 5. Abhaken nur auf Heute. |
 
 Nicht: Karten, Sortierung nach Projekt. Projekt ist ein **Tag**. Ein Ziel ist ein Satz, kein Container.
 

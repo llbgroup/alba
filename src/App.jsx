@@ -13,7 +13,7 @@ import Habits from './views/Habits'
 import Log from './views/Log'
 import Settings from './views/Settings'
 
-const VIEWS = ['today', 'board', 'aims', 'ideas', 'habits', 'log', 'settings']
+const VIEWS = ['today', 'board', 'habits', 'aims', 'ideas', 'log', 'settings']
 
 function parseHash() {
   const raw = (location.hash || '').replace(/^#\/?/, '')

@@ -20,9 +20,9 @@ Safari (Mac): Ablage → Zum Dock hinzufügen. iPhone: Teilen → Zum Home-Bilds
 |---|---|
 | **Heute** | Der Tag. Abhaken, Highlight, Routinen, abends erzählen. |
 | **To-do** | Planen. Ohne Datum = Neu. Mit Datum = Geplant, als Timeline. |
+| **Routinen** | Höchstens fünf. Anker Pflicht. Abhaken nur auf Heute. Mini zählt. |
 | **Ziele** | Ein Satz für Jahr, Monat, Woche. Kein Ordner. |
 | **Ideen** | Dokumente. To-dos sitzen im Text und unter To-do. |
-| **Routinen** | Höchstens fünf. Anker Pflicht. Abhaken nur auf Heute. Mini zählt. |
 | **Log** | Was der Tag gehalten hat. Nachlesen, nicht planen. |
 | **Einstellungen** | Name, Thema, Himmel, xAI-Schlüssel, Export, Beispiel. |
 

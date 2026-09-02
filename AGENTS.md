@@ -52,7 +52,7 @@ Nicht: `localStorage.clear`, Port ändern, `fillDemo` ohne Frage, Journal commit
 
 ## Produkt (kurz)
 
-Heute = Arbeit. To-do = Plan (Neu ohne Datum, Geplant mit). Ziele = Sätze Jahr/Monat/Woche. Ideen = Dokumente, To-dos im Text. Routinen ≤ 5, Anker Pflicht, Mini zählt, Abhaken auf Heute. Log = Speicher. Tag ist Filter, kein Ordner.
+Heute = Arbeit. To-do = Plan (Neu ohne Datum, Geplant mit). Routinen ≤ 5, Anker Pflicht, Mini zählt, Abhaken auf Heute. Ziele = Sätze Jahr/Monat/Woche. Ideen = Dokumente, To-dos im Text. Log = Speicher. Tag ist Filter, kein Ordner. Nav: Heute, To-do, Routinen, Ziele, Ideen, Log.
 
 Menschliche Anleitung: `ANLEITUNG.md` (in der App unter Einstellungen speicherbar). Modell: `STAND.md`. Sync-Vertrag für später: `docs/SYNC.md`.
 

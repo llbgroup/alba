@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import {
   MAX_MONTH_AIMS,
   MAX_YEAR_AIMS,
@@ -30,15 +30,31 @@ function AimRow({ aim, size = 'month' }) {
   const s = useAlba()
   const area = areaById(s, aim.areaId)
   const [tagOpen, setTagOpen] = useState(false)
+  const [editing, setEditing] = useState(false)
+  const rowRef = useRef(null)
+  const hasNote = Boolean((aim.note || '').trim())
+  const showNote = hasNote || editing
+
+  function leaveField() {
+    window.setTimeout(() => {
+      const next = document.activeElement
+      if (rowRef.current?.contains(next) && (next.classList.contains('aim-line') || next.classList.contains('aim-note'))) {
+        return
+      }
+      setEditing(false)
+    }, 0)
+  }
 
   return (
-    <div className={'aim-row size-' + size}>
+    <div className={'aim-row size-' + size} ref={rowRef}>
       <textarea
         className="aim-line"
         rows={size === 'year' ? 2 : 1}
         placeholder="Ein Satz."
         value={aim.title}
         onChange={(e) => updateAim(aim.id, { title: e.target.value })}
+        onFocus={() => setEditing(true)}
+        onBlur={leaveField}
       />
       <div className="aim-row-tools">
         <button
@@ -57,13 +73,17 @@ function AimRow({ aim, size = 'month' }) {
         </button>
         <TrashBtn onClick={() => dropAim(aim.id)} />
       </div>
-      <textarea
-        className="aim-note"
-        rows={2}
-        placeholder="Kurz warum — optional"
-        value={aim.note || ''}
-        onChange={(e) => updateAim(aim.id, { note: e.target.value })}
-      />
+      {showNote && (
+        <textarea
+          className="aim-note"
+          rows={2}
+          placeholder="Kurz warum — optional"
+          value={aim.note || ''}
+          onChange={(e) => updateAim(aim.id, { note: e.target.value })}
+          onFocus={() => setEditing(true)}
+          onBlur={leaveField}
+        />
+      )}
       {tagOpen && (
         <TagBar
           embedded
